@@ -1,6 +1,7 @@
 let playerScore = 0;
 let computerScore = 0;
 let gameSheet = [];
+var btn = document.getElementById("startGame");
 
 function getComputerChoice(){
     let options = ["Rock","Paper","Scissors"];
@@ -50,4 +51,4 @@ function game(){
     return("Player Score : " + playerScore + " | Computer Score : " + computerScore);
 }
 
-game();
+btn.addEventListener("click", game);
