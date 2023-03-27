@@ -1,0 +1,25 @@
+div {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    align-self: center;
+    color: blue;
+}
+
+button {
+    align-self: center;
+    background-color: blue;
+    color: white;
+    font-size: 30px;
+    font-weight: bolder;
+    font-family: monospace;
+    padding: 40px;
+    border-color: blue;
+    border-radius: 10px;
+    box-shadow: 5px 8px black;
+}

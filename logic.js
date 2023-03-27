@@ -46,9 +46,17 @@ function game(){
         playRound(playerSelection, computerSelection);
         gameCount += 1;
     }
-    alert(`Player Score : ${playerScore} | Computer Score : ${computerScore}`);
+    let playerScoreShow = playerScore;
+    let computerScoreShow = computerScore;
+    alert(`Player Score : ${playerScoreShow} | Computer Score : ${computerScoreShow}`);
     console.log(gameSheet);
-    return("Player Score : " + playerScore + " | Computer Score : " + computerScore);
+    reset();
+    return("Player Score : " + playerScoreShow + " | Computer Score : " + computerScoreShow);
+}
+
+function reset(){
+    computerScore = 0;
+    playerScore = 0;
 }
 
 btn.addEventListener("click", game);
