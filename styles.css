@@ -1,9 +1,32 @@
-div {
+#results{
+    font-weight: bold;
+    font-family: monospace;
+}
+
+#gameSheet {
+    text-align: left;
+    font-family: monospace;
+}
+
+ul{
+    list-style-type: none;
+}
+pre{
+    align-items: center;
+    align-self: center;
+}
+p{
+    align-self: center;
+    text-align: center;
+}
+.cont {
     background-color: white;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    gap: 20px;
 }
 
 h1 {

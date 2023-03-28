@@ -24,7 +24,15 @@ Function to play a round of "Rock, Paper, Scissors" between user and computer
 function playRound(playerSelection, computerSelection){
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
-    gameSheet.push(`Player Choice : ${playerSelection} | ${computerSelection} : Computer Choice`);
+    let playerSelectionShoww = playerSelection;
+    let computerSelectionShoww = computerSelection;
+    while(playerSelectionShoww.length != 10){
+        playerSelectionShoww = playerSelectionShoww + " ";
+    }
+    while(computerSelectionShoww.length != 10){
+        computerSelectionShoww = computerSelectionShoww + " ";
+    }
+    gameSheet.push(`Player Choice : ${playerSelectionShoww} | ${computerSelectionShoww} : Computer Choice`);
     if(playerSelection == "rock" && computerSelection == "scissors"){
         playerScore += 1;
         return ("You win! Rock beats Scissors");
@@ -58,12 +66,17 @@ Function to play a game of "Rock, Paper and Scissors" where 5 rounds are played
 
 function game(){
     let gameCount = 0;
+    const results = document.querySelector('#gameSheet');
     while(playerScore + computerScore != 5){
         let playerSelection = prompt("Rock, Paper or Scissors?");
         let computerSelection = getComputerChoice();
         playRound(playerSelection, computerSelection);
+        const roundDetails = document.createElement("li");
+        roundDetails.innerText = `${gameSheet[gameCount]}`;
+        results.appendChild(roundDetails);
         gameCount += 1;
     }
+    roundDetails.innerText += '\r\n Finished! \r\n';
     let playerScoreShow = playerScore;
     let computerScoreShow = computerScore;
     reset();
